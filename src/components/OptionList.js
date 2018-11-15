@@ -6,16 +6,12 @@ import CheckListElement from "./CheckListElement";
 function OptionList(props) {
   return (
     <div>
-      {props.options.map(option => (
-        <CheckListElement handleClick={null} text={option.title} />
+      {props.options.map((option, i) => (
+        <CheckListElement key={i} handleClick={null} text={option.title} />
       ))}
     </div>
   );
 }
-
-// return props.options.map(option => (
-//   <CheckListElement handleClick={null} text={option.title} />
-// ));
 
 function mapStateToProps(state) {
   return {

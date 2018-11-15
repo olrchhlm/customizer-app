@@ -12,26 +12,26 @@ const initialState = {
   colors: [
     { clrGer: "blau", clrEng: "blue", clrCaps: "BLUE" },
     { clrGer: "grün", clrEng: "green", clrCaps: "GREEN" },
-    { clrGer: "rot", clrEng: "red", clrCaps: "RED" }
+    { clrGer: "rot", clrEng: "red", clrCaps: "RED" },
+    { clrGer: "gelb", clrEng: "yellow", clrCaps: "GELB" }
   ]
 };
 
 const reducer = (state = initialState, action) => {
-  console.log("reducer-running", action);
+  if (action.type.includes("COLOR_")) {
+    let givenColorInCaps = action.type.replace("COLOR_", "");
+    let indexOfNewColor = state.colors.findIndex(
+      color => color.clrCaps === givenColorInCaps
+    );
+
+    return Object.assign({}, state, {
+      currentColor: state.colors[indexOfNewColor].clrGer
+    });
+  }
 
   switch (action.type) {
     case "INCREMENT": {
       return Object.assign({}, state, { count: state.count + 1 });
-    }
-
-    case "COLOR_BLUE": {
-      return Object.assign({}, state, { currentColor: "blau" });
-    }
-    case "COLOR_RED": {
-      return Object.assign({}, state, { currentColor: "rot" });
-    }
-    case "COLOR_GREEN": {
-      return Object.assign({}, state, { currentColor: "grün" });
     }
 
     default:
