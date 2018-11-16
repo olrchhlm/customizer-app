@@ -1,37 +1,52 @@
 import { createStore } from "redux";
 
+import {
+  CHANGE_COLOR,
+  CHECK_CHECKBOX,
+  CHANGE_TEXT_INPUT,
+  CHECK_RADIOBOX
+} from "./../store/actions";
+
 const initialState = {
-  count: 8,
-  currentColor: "weiß",
-  options: [
-    { title: "Carbon", checked: false },
-    { title: "Lochleder", checked: false },
-    { title: "Glattleder", checked: false },
-    { title: "Alcantara", checked: false }
-  ],
-  colors: [
-    { clrGer: "blau", clrEng: "blue", clrCaps: "BLUE" },
-    { clrGer: "grün", clrEng: "green", clrCaps: "GREEN" },
-    { clrGer: "rot", clrEng: "red", clrCaps: "RED" },
-    { clrGer: "gelb", clrEng: "yellow", clrCaps: "GELB" }
-  ]
+  currentColor: "",
+  checkedOptions: [],
+  currentTextInput: "",
+  checkedRadiobox: []
 };
 
 const reducer = (state = initialState, action) => {
-  if (action.type.includes("COLOR_")) {
-    let givenColorInCaps = action.type.replace("COLOR_", "");
-    let indexOfNewColor = state.colors.findIndex(
-      color => color.clrCaps === givenColorInCaps
-    );
-
-    return Object.assign({}, state, {
-      currentColor: state.colors[indexOfNewColor].clrGer
-    });
-  }
-
   switch (action.type) {
-    case "INCREMENT": {
-      return Object.assign({}, state, { count: state.count + 1 });
+    case CHECK_CHECKBOX: {
+      let newCheckedOptions;
+
+      if (state.checkedOptions.includes(action.checkboxID)) {
+        newCheckedOptions = state.checkedOptions.filter(
+          element => element !== action.checkboxID
+        );
+      } else {
+        newCheckedOptions = [...state.checkedOptions, action.checkboxID];
+      }
+      return Object.assign({}, state, {
+        checkedOptions: newCheckedOptions
+      });
+    }
+
+    case CHECK_RADIOBOX: {
+      let newCheckedOptions = [action.radioboxID];
+
+      return Object.assign({}, state, {
+        checkedRadiobox: newCheckedOptions
+      });
+    }
+
+    case CHANGE_COLOR: {
+      return Object.assign({}, state, {
+        currentColor: action.newColor
+      });
+    }
+
+    case CHANGE_TEXT_INPUT: {
+      return Object.assign({}, state, { currentTextInput: action.newInput });
     }
 
     default:

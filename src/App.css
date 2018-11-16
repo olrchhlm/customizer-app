@@ -6,14 +6,10 @@
   display: flex;
 }
 
-#blue {
-  background: blue;
-}
-
-#green {
-  background: green;
-}
-
-#red {
-  background: red;
+.color-picker-button {
+  border: 1px solid grey;
+  background: white;
+  width: 80px;
+  height: 30px;
+  margin-right: 5px;
 }

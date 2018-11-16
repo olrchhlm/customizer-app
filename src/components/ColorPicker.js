@@ -1,17 +1,26 @@
 import React from "react";
 import { connect } from "react-redux";
 import ColorPickerElement from "./ColorPickerElement";
+import { changeColor } from "./../store/actions";
+
+const colors = [
+  { clrGer: "blau", clrEng: "blue", clrCaps: "BLUE" },
+  { clrGer: "grün", clrEng: "green", clrCaps: "GREEN" },
+  { clrGer: "rot", clrEng: "red", clrCaps: "RED" },
+  { clrGer: "gelb", clrEng: "yellow", clrCaps: "YELLOW" }
+];
 
 function ColorPicker(props) {
   return (
     <div>
-      {props.colors.map((color, i) => (
+      <h2>Farbauswahl</h2>
+      {colors.map((color, i) => (
         <ColorPickerElement
           key={i}
           clrGer={color.clrGer}
           clrEng={color.clrEng}
           clrCaps={color.clrCaps}
-          chooseColor={props.chooseColor}
+          changeColor={props.changeColor}
         />
       ))}
 
@@ -24,16 +33,14 @@ function ColorPicker(props) {
 
 function mapStateToProps(state) {
   return {
-    currentColor: state.currentColor,
-    colors: state.colors
+    currentColor: state.currentColor
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    chooseColor: clrCaps => {
-      const action = { type: "COLOR_" + clrCaps };
-      dispatch(action);
+    changeColor: newColor => {
+      dispatch(changeColor(newColor));
     }
   };
 }

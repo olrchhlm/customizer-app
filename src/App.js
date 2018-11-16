@@ -1,17 +1,20 @@
 import React, { Component } from "react";
-import "./App.css";
-//import Counter from "./Counter";
 import store from "./store/";
+
+import "./App.css";
+import TextField from "./components/TextField";
 import ColorPicker from "./components/ColorPicker";
 import OptionList from "./components/OptionList";
+import MaterialChoice from "./components/MaterialChoice";
 
 class App extends Component {
   render() {
-    //Counter Component not included <Counter store={store} />
     return (
       <div>
         <ColorPicker store={store} />
         <OptionList store={store} />
+        <TextField store={store} />
+        <MaterialChoice store={store} />
       </div>
     );
   }
