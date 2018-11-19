@@ -1,3 +1,7 @@
+body {
+  transition: all 1s;
+}
+
 #multirow {
   display: flex;
 }
@@ -16,4 +20,32 @@
   width: 80px;
   height: 30px;
   margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.model-picker-button {
+  border: 1px solid black;
+  background: white;
+  width: 80px;
+  height: 80px;
+  margin-right: 5px;
+}
+
+.dropdown-arrow {
+  margin-top: 30px;
+  margin-left: 5px;
+  height: 15px;
+}
+
+.show {
+  display: inherit;
+}
+
+.hide {
+  display: none;
+}
+
+.flip {
+  transform: rotate(180deg);
+  transform-origin: center;
 }

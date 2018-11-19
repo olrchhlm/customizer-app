@@ -3,10 +3,10 @@ import React from "react";
 function ModelPickerElement(props) {
   return (
     <button
-      onClick={() => props.changeColor(props.clrGer)}
-      className="color-picker-button"
+      onClick={() => props.changeModel(props.modelID)}
+      className="model-picker-button"
     >
-      <div> {props.clrGer} </div>
+      <div> {props.title} </div>
     </button>
   );
 }

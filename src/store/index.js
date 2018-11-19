@@ -49,7 +49,7 @@ const reducer = (state = initialState, action) => {
 
     case CHANGE_MODEL: {
       return Object.assign({}, state, {
-        currentColor: action.newColor
+        modelPicked: action.newModel
       });
     }
 
