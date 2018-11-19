@@ -6,6 +6,12 @@ export const CHANGE_TEXT_INPUT = "CHANGE_TEXT_INPUT";
 
 export const CHECK_RADIOBOX = "CHECK_RADIOBOX";
 
+export const CHANGE_MODEL = "CHANGE_MODEL";
+
+export function changeModel(newModel) {
+  return { type: CHANGE_MODEL, newModel };
+}
+
 export function changeColor(newColor) {
   return { type: CHANGE_COLOR, newColor };
 }

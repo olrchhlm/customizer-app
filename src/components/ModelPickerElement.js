@@ -1,6 +1,6 @@
 import React from "react";
 
-function ColorPickerElement(props) {
+function ModelPickerElement(props) {
   return (
     <button
       onClick={() => props.changeColor(props.clrGer)}
@@ -11,4 +11,4 @@ function ColorPickerElement(props) {
   );
 }
 
-export default ColorPickerElement;
+export default ModelPickerElement;

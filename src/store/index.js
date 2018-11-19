@@ -4,10 +4,12 @@ import {
   CHANGE_COLOR,
   CHECK_CHECKBOX,
   CHANGE_TEXT_INPUT,
-  CHECK_RADIOBOX
+  CHECK_RADIOBOX,
+  CHANGE_MODEL
 } from "./../store/actions";
 
 const initialState = {
+  modelPicked: "",
   currentColor: "",
   checkedOptions: [],
   currentTextInput: "",
@@ -40,6 +42,12 @@ const reducer = (state = initialState, action) => {
     }
 
     case CHANGE_COLOR: {
+      return Object.assign({}, state, {
+        currentColor: action.newColor
+      });
+    }
+
+    case CHANGE_MODEL: {
       return Object.assign({}, state, {
         currentColor: action.newColor
       });

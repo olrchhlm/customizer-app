@@ -1,5 +1,9 @@
-.colorPickerElement {
+#multirow {
   display: flex;
+}
+
+#multirow > div {
+  width: 50%;
 }
 
 .CheckListElement {
