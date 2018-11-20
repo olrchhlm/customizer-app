@@ -1,5 +1,17 @@
-.colorPickerElement {
+body {
+  transition: all 1s;
+}
+
+h2 {
+  font-weight: 200;
+}
+
+#multirow {
   display: flex;
+}
+
+#multirow > div {
+  width: 50%;
 }
 
 .CheckListElement {
@@ -12,4 +24,67 @@
   width: 80px;
   height: 30px;
   margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.model-picker-button {
+  border: 1px solid black;
+  background: white;
+  width: 80px;
+  height: 80px;
+  margin-right: 5px;
+}
+
+.dropdown-arrow {
+  margin-top: 30px;
+  margin-left: 5px;
+  height: 15px;
+}
+
+.show {
+  display: inherit;
+}
+
+.hide {
+  display: none;
+}
+
+.flip {
+  transform: rotate(180deg);
+  transform-origin: center;
+}
+
+.preview-image {
+  width: 280px;
+  height: 120px;
+  margin-top: 75px;
+  margin-left: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.material-container {
+  display: flex;
+  width: 100%;
+}
+
+#blue {
+  background: blue;
+}
+
+#red {
+  background: red;
+}
+
+#green {
+  background: green;
+}
+
+#yellow {
+  background: yellow;
+}
+
+#orange {
+  background: orange;
 }

@@ -25,6 +25,7 @@ function OptionList(props) {
           checkboxID={option.id}
           text={option.title}
           checked={props.checkedOptions.includes(option.id) ? true : false}
+          onMouseEnter={null}
         />
       ))}
     </div>

@@ -4,14 +4,18 @@ import {
   CHANGE_COLOR,
   CHECK_CHECKBOX,
   CHANGE_TEXT_INPUT,
-  CHECK_RADIOBOX
+  CHECK_RADIOBOX,
+  CHANGE_MODEL,
+  ACTIVATE_MOUSE_OVER
 } from "./../store/actions";
 
 const initialState = {
+  modelPicked: "",
   currentColor: "",
   checkedOptions: [],
   currentTextInput: "",
-  checkedRadiobox: []
+  checkedRadiobox: [],
+  currentImageHover: ""
 };
 
 const reducer = (state = initialState, action) => {
@@ -45,8 +49,18 @@ const reducer = (state = initialState, action) => {
       });
     }
 
+    case CHANGE_MODEL: {
+      return Object.assign({}, state, {
+        modelPicked: action.newModel
+      });
+    }
+
     case CHANGE_TEXT_INPUT: {
       return Object.assign({}, state, { currentTextInput: action.newInput });
+    }
+
+    case ACTIVATE_MOUSE_OVER: {
+      return Object.assign({}, state, { currentImageHover: action.materialID });
     }
 
     default:
