@@ -16,7 +16,7 @@ function ModelPicker(props) {
         <h2>Modell Auswahl</h2>
         <i
           id="model-arrow"
-          class="far fa-arrow-alt-circle-down dropdown-arrow"
+          className="far fa-arrow-alt-circle-down dropdown-arrow"
         />
       </div>
       <div id="modelChoice" className="hide">

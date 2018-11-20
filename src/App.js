@@ -8,6 +8,7 @@ import OptionList from "./components/OptionList";
 import MaterialChoice from "./components/MaterialChoice";
 import YourChoices from "./components/YourChoices";
 import ModelPicker from "./components/ModelPicker";
+import PreviewImage from "./components/PreviewImage";
 
 class App extends Component {
   render() {
@@ -18,7 +19,10 @@ class App extends Component {
         </div>
         <div>
           <ModelPicker store={store} />
-          <MaterialChoice store={store} />
+          <div className="material-container">
+            <MaterialChoice store={store} />
+            <PreviewImage store={store} />
+          </div>
           <ColorPicker store={store} />
           <OptionList store={store} />
           <TextField store={store} />

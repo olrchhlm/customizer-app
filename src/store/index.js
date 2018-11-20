@@ -5,7 +5,8 @@ import {
   CHECK_CHECKBOX,
   CHANGE_TEXT_INPUT,
   CHECK_RADIOBOX,
-  CHANGE_MODEL
+  CHANGE_MODEL,
+  ACTIVATE_MOUSE_OVER
 } from "./../store/actions";
 
 const initialState = {
@@ -13,7 +14,8 @@ const initialState = {
   currentColor: "",
   checkedOptions: [],
   currentTextInput: "",
-  checkedRadiobox: []
+  checkedRadiobox: [],
+  currentImageHover: ""
 };
 
 const reducer = (state = initialState, action) => {
@@ -55,6 +57,10 @@ const reducer = (state = initialState, action) => {
 
     case CHANGE_TEXT_INPUT: {
       return Object.assign({}, state, { currentTextInput: action.newInput });
+    }
+
+    case ACTIVATE_MOUSE_OVER: {
+      return Object.assign({}, state, { currentImageHover: action.materialID });
     }
 
     default:

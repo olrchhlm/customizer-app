@@ -8,6 +8,8 @@ export const CHECK_RADIOBOX = "CHECK_RADIOBOX";
 
 export const CHANGE_MODEL = "CHANGE_MODEL";
 
+export const ACTIVATE_MOUSE_OVER = "ACTIVATE_MOUSE_OVER";
+
 export function changeModel(newModel) {
   return { type: CHANGE_MODEL, newModel };
 }
@@ -26,4 +28,8 @@ export function changeTextInput(newInput) {
 
 export function checkRadiobox(radioboxID) {
   return { type: CHECK_RADIOBOX, radioboxID };
+}
+
+export function activateMouseOver(materialID) {
+  return { type: ACTIVATE_MOUSE_OVER, materialID };
 }
